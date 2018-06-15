@@ -39,13 +39,14 @@ INSTALLED_APPS = (
 )
 ----
 
-1.  Choose a service name, and set the secret token if needed.
+1.  Choose a service name, and set the secret token if needed.Set the server address of the APM server instance. (If SERVER_URL is not set, by default it will be set to 'localhost:8200'.)
 
 [source,python]
 ----
 ELASTIC_APM = {
    'SERVICE_NAME': '<SERVICE-NAME>',
    'SECRET_TOKEN': '<SECRET-TOKEN>',
+   'SERVER_URL': '<SERVER-URL>',
 }
 ----
 
@@ -55,6 +56,7 @@ or as environment variables:
 ----
 ELASTIC_APM_SERVICE_NAME=<SERVICE-NAME>
 ELASTIC_APM_SECRET_TOKEN=<SECRET-TOKEN>
+ELASTIC_APM_SERVER_URL=<SERVER-URL>
 ----
 
 You now have basic error logging set up, and everything resulting in a 500 HTTP status code will be reported to the APM Server.
